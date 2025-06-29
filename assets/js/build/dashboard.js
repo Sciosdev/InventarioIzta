@@ -1,0 +1,1 @@
+import{spinner,mostrarTabla}from"./funciones.js";import{getApi}from"./api/funcionesApi.js";import{datos,tablasPagina}from"./variables.js";tablasPagina.forEach((a=>{const i=a.getAttribute("name");spinner(a),async function(a,i=""){const n=`${window.location.origin}/api/index.php/${a}`,t=i?`${n}?limite=${i}`:n;datos.value=await getApi(t),mostrarTabla(a,!1,null)}(i,5)}));

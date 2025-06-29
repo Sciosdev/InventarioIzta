@@ -1,0 +1,165 @@
+
+export const divTabla = document.querySelector('[data-table="div_table"]');
+export const nombreTabla =  divTabla.getAttribute('name');
+export const tablasPagina = document.querySelectorAll('[data-table = "div_table"]');
+
+//Botones
+//Boton consultar
+export const btnConsultar = document.querySelector('#consultar');
+//Boton LimpiarFiltros
+export const btnLimpiar = document.querySelector('#limpiar-filtros');
+//Boton Numero invntario
+export const btnConsultarVarios = document.querySelector('#consultarVarios');
+//Boton para nuevo Bien
+export const btnNuevo = document.querySelector('#nuevo');
+//Boton para editar
+export const btnEditar = document.querySelector('#editar');
+//Boton para eliminar
+export const btnEliminar = document.querySelector('#eliminar');
+
+//Cargando filtros
+export const inputsFiltros = document.querySelectorAll('.filtro');
+//Cargando filtros
+export const selects = document.querySelectorAll('select:not(#tipo_inventario)');
+
+export let modalActivo = {
+    value: null
+};
+
+export const tablas = {
+    bienes: {
+        nombre: 'bien',
+        columnas: [
+
+            { field: 'Número de Inventario', campo: 'numero_inventario' },
+            { field: 'Tipo de Inventario', campo: 'tipo_inventario' },
+            { field: 'Tipo de Bien', campo: 'tipobien' },
+            { field: 'Descripción', campo: 'descripcion' },
+            { field: 'Número de Serie', campo: 'numero_serie' },
+            { field: 'Marca', campo: 'marca' },
+            { field: 'Modelo', campo: 'modelo' },
+            { field: 'Responsable', campo: 'nombre_responsable' },
+            { field: 'Edificio', campo: 'nombreedif' },
+            { field: 'Ubicación', campo: 'ubicacion' },
+            { field: 'Área', campo: 'nombre_area' },
+            { field: 'Autorizador', campo: 'nombre_autorizador' },
+            { field: 'Transferencia', campo: 'transferencia' },
+            { field: 'Creado', campo: 'nombre_created' },
+            { field: 'Modificado', campo: 'nombre_modified' }
+        ]
+    },
+    tipos: {
+        nombre: 'tipos',
+        columnas: [
+
+            { field: 'ID', campo: 'id' },
+            { field: 'Clave', campo: 'cvetpo' },
+            { field: 'Tipo de Bien', campo: 'tipobien' },
+            { field: 'Modificado', campo: 'nombre_modified' }
+        ]
+    },
+    edificios: {
+        nombre: 'edificio',
+        columnas: [
+
+            { field: 'ID', campo: 'id' },
+            { field: 'Clave', campo: 'cveedif' },
+            { field: 'Nombre Edificio', campo: 'nombreedif' },
+            { field: 'Modificado', campo: 'nombre_modified' }
+        ]
+    },
+    areas: {
+        nombre: 'area',
+        columnas: [
+
+            { field: 'ID', campo: 'id' },
+            { field: 'Clave', campo: 'cve_area' },
+            { field: 'Nombre Unidad', campo: 'nombre_area' },
+            { field: 'Modificado', campo: 'nombre_modified' }
+        ]
+    },
+    responsables: {
+        nombre: 'responsable',
+        columnas: [
+
+            { field: 'ID', campo: 'id' },
+            { field: 'Nombre', campo: 'nombre_responsable' },
+            { field: 'RFC', campo: 'rfc' },
+            { field: 'Puesto', campo: 'puesto' },
+            { field: 'Modificado', campo: 'nombre_modified' }
+        ]
+    },
+    usuarios: {
+        nombre: 'usuarios',
+        columnas: [
+            { field: 'ID', campo: 'id' },
+            { field: 'Numero de cuenta', campo: 'num_cuenta' },
+            { field: 'Nombre', campo: 'nombre' },
+            { field: 'Email', campo: 'email' },
+            { field: 'Estatus', campo: 'estatus' }
+        ]
+    }
+}
+
+export const validacionesFormularios = {
+    tipos: {
+        cvetpo: 'Ingresa la clave',
+        tipobien: 'El nombre es obligatorio',
+    },
+    edificios: {
+        cveedif: 'Ingresa la clave',
+        nombreedif: 'El nombre es obligatorio',
+    },
+    areas: {
+        cve_area: 'Ingresa la clave',
+        nombre_area: 'El nombre es obligatorio',
+    },
+    responsables: {
+        nombre_responsable: 'El nombre es obligatorio',
+        rfc: 'El RFC es obligatorio',
+        puesto: 'El puesto es obligatorio',
+    },
+    bienes: {
+        numero_inventario: 'El número de inventario es obligatorio',
+        tipo_inventario: 'Seleccione tipo de inventario',
+        tipo_bien_id: 'Seleccione tipo de bien',
+        descripcion: 'La descripción es obligatoria',
+        numero_serie: 'Número de serie obligatorio',
+        marca: 'La marca es obligatoria',
+        modelo: 'El modelo es obligatorio',
+        autorizador: 'Seleccione autorizador',
+        responsable_id: 'Seleccione responsable',
+        area_id: 'Seleccione área',
+        edificio_id: 'Seleccione edificio',
+        ubicacion: 'Indique ubicación',
+    },
+    usuarios: {
+        nombre: 'El nombre del usuario es obligatorio',
+        num_cuenta: 'El numero de trabajador es obligatorio',
+        email: 'El correo es obligatorio',
+    }
+};
+
+export let filtros = {
+    value: {}
+};
+export let datos = {
+    value: []
+};
+export let bienesModal = {
+    value: []
+};
+export let datoEditar = {
+    value: {}
+};
+export let dato_Editar = new Map();
+
+export const datosSelect = {
+    tipos: [],
+    responsables: [],
+    unidades: [],
+    edificios: [],
+}
+
+export const filasSeleccionadas = new Set();
+

@@ -1,0 +1,24 @@
+{
+  "name": "inventario",
+  "version": "1.0.0",
+  "description": "Proyecto Inventario para la fesi",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "keywords": [
+    "SASS",
+    "PHP",
+    "JQUERY",
+    "BOOTSTRAP"
+  ],
+  "author": "Fesi",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.81.0"
+  }
+}
