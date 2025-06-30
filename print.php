@@ -65,7 +65,14 @@
     .firmas p { margin: 4px 0; }
 
     @media print {
-      body { margin: 0; }
+      body { margin: 0; padding-bottom: 120px; }
+      .firmas {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+      }
     }
   </style>
 </head>
