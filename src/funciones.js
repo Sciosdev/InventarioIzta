@@ -1,4 +1,4 @@
-import { getApi, getApiFiltros, postApi, deleteApi, putApi } from './api/funcionesApi.js';
+import { getApi, getApiFiltros, postApi, deleteApi, putApi, resolveUrl, basePath } from './api/funcionesApi.js';
 import { modalActivo, tablas, filtros, validacionesFormularios, nombreTabla, datos, divTabla, bienesModal, datosSelect, btnConsultar, filasSeleccionadas, dato_Editar } from './variables.js';
 
 //LLEENA EL OBJETO FILTROS PARA DESPUES CONSULTAR
@@ -308,7 +308,7 @@ export async function consultarSelect(selects) {
     for (const select of selects) {
         if (select.tagName === 'SELECT' && select.id !== 'tipo_inventario') {
             const idInput = select.id === 'autorizador' ? 'responsables' : select.id;
-            const url = `${window.location.origin}/api/index.php/${idInput}`;
+            const url = new URL(`${basePath}/api/index.php/${idInput}`, window.location.origin);
             const valoresFiltros = await getApi(url);
             datosSelect[select.id] = valoresFiltros;
         }
@@ -854,7 +854,7 @@ export function guardar() {
 
 async function crear(registro) {
 
-    const url = `/api/index.php/${nombreTabla}`;
+    const url = resolveUrl(`/api/index.php/${nombreTabla}`);
 
     const resultado = await postApi(url, registro);
 
@@ -880,7 +880,7 @@ async function actualizar(registro) {
     const { id } = unicoValor
     registro.id = id;
 
-    const url = `/api/index.php/${nombreTabla}`;
+    const url = resolveUrl(`/api/index.php/${nombreTabla}`);
     const resultado = await putApi(url, registro);
 
     if (resultado.tipo === 'success') {
@@ -913,7 +913,7 @@ export async function eliminar() {
         id
     };
 
-    const url = `/api/index.php/${nombreTabla}`;
+    const url = resolveUrl(`/api/index.php/${nombreTabla}`);
 
     const resultado = await deleteApi(url, objId);
 
@@ -935,7 +935,7 @@ export async function eliminar() {
 //Consulta todos los registro de las tablas menos la de bienes y usuarios.
 export async function consultarRegistros() {
     spinner(divTabla);
-    const url = `/api/index.php/${nombreTabla}`;
+    const url = resolveUrl(`/api/index.php/${nombreTabla}`);
 
     datos.value = await getApi(url);
 
@@ -960,7 +960,7 @@ async function actualizarItems(formData) {
         idsBienes
     };
 
-    const url = `/api/index.php/bienes/editarBienes`;
+    const url = resolveUrl(`/api/index.php/bienes/editarBienes`);
     const resultado = await putApi(url, datos);
 
     if (resultado.tipo === 'success') {
@@ -1000,7 +1000,7 @@ function cambiandoEstatus(usuario) {
 
 async function actualizarEstatus(registro, cambioEstado = false) {
 
-    const url = `/api/index.php/${nombreTabla}/editarEstado`;
+    const url = resolveUrl(`/api/index.php/${nombreTabla}/editarEstado`);
 
     const resultado = await putApi(url, {
         id: registro.id,
