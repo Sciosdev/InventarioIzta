@@ -20,7 +20,7 @@
 
                         <!-- Logo -->
                         <div class="card-header py-1 text-center bg-white">
-                            <span><img src="assets/images/logo-unam.png" alt="logo" height="200"></span>
+                            <span><img src="<?= url('assets/images/logo-unam.png'); ?>" alt="logo" height="200"></span>
                         </div>
 
                         <div class="card-body py-2 px-4">
@@ -40,7 +40,7 @@
                             <?php endforeach;
                             endforeach; ?>
 
-                            <form action="/" method="POST">
+                            <form action="<?= url('/'); ?>" method="POST">
 
                                 <div class="mb-3">
                                     <label for="numero_cuenta" class="form-label">Numero de Cuenta</label>
@@ -48,7 +48,7 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <a href="auth-recoverpw.php" class="text-muted float-end fs-12">¿Olvidaste tu contraseña?</a>
+                                    <a href="<?= url('auth-recoverpw.php'); ?>" class="text-muted float-end fs-12">¿Olvidaste tu contraseña?</a>
                                     <label for="password" class="form-label">Contraseña</label>
                                     <div class="input-group input-group-merge">
                                         <input type="password" id="password" name="password" class="form-control" placeholder="Tu contraseña">
@@ -88,7 +88,7 @@
     <?php include_once __DIR__ . '/layouts/footer-scripts.php'; ?>
   
       <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="<?= url('assets/js/app.min.js'); ?>"></script>
 
 </body>
 

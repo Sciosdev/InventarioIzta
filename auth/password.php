@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../layouts/app.php';
+
 use Model\Usuario;
 require_once __DIR__ . '/../clases/Usuario.php';
 
@@ -24,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $usuario->hashPassword();
         unset($usuario->token_email);
         $usuario->guardar();
-        header('Location:/message.php');
+        header('Location: ' . url('/message.php'));
     }
 
     return;

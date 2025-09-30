@@ -12,15 +12,15 @@ isAuth(); ?>
     <link rel="stylesheet" href="assets/vendor/daterangepicker/daterangepicker.css">
 
     <!-- Datatables css -->
-    <link href="/assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
 
     <!-- Vector Map css -->
-    <link rel="stylesheet" href="/assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
+    <link rel="stylesheet" href="<?= url('assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css'); ?>">
 
 
     <?php include 'layouts/head-css.php'; ?>
@@ -73,7 +73,7 @@ isAuth(); ?>
 
                                 <div class="d-flex justify-content-end justify-content-lg-center mt-3">
 
-                                    <a href="/tablas/bienes.php" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
+                                    <a href="<?= url('tablas/bienes.php'); ?>" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
 
                                 </div>
 
@@ -101,7 +101,7 @@ isAuth(); ?>
 
                                         <div class="d-flex justify-content-end justify-content-lg-center mt-3">
 
-                                            <a href="/tablas/tipos.php" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
+                                            <a href="<?= url('tablas/tipos.php'); ?>" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
 
                                         </div>
 
@@ -120,7 +120,7 @@ isAuth(); ?>
 
                                         <div class="d-flex justify-content-end justify-content-lg-center mt-3">
 
-                                            <a href="/tablas/edificios.php" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
+                                            <a href="<?= url('tablas/edificios.php'); ?>" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
 
                                         </div>
 
@@ -139,7 +139,7 @@ isAuth(); ?>
 
                                         <div class="d-flex justify-content-end justify-content-lg-center mt-3">
 
-                                            <a href="/tablas/areas.php" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
+                                            <a href="<?= url('tablas/areas.php'); ?>" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
 
                                         </div>
 
@@ -159,7 +159,7 @@ isAuth(); ?>
 
                                         <div class="d-flex justify-content-end justify-content-lg-center mt-3">
 
-                                            <a href="/tablas/responsables.php" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
+                                            <a href="<?= url('tablas/responsables.php'); ?>" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
 
                                         </div>
 
@@ -178,7 +178,7 @@ isAuth(); ?>
 
                                         <div class="d-flex justify-content-end justify-content-lg-center mt-3">
 
-                                            <a href="/tablas/usuarios.php" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
+                                            <a href="<?= url('tablas/usuarios.php'); ?>" class="btn btn-primary">Ver mas <i class="ri-arrow-right-line"></i></a>
 
                                         </div>
 
@@ -214,8 +214,8 @@ isAuth(); ?>
     <?php include 'layouts/footer-scripts.php'; ?>
 
     <!-- Daterangepicker js -->
-    <script src="assets/vendor/daterangepicker/moment.min.js"></script>
-    <script src="assets/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="<?= url('assets/vendor/daterangepicker/moment.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/daterangepicker/daterangepicker.js'); ?>"></script>
 
     <!-- Apex Charts js -->
     <!-- <script src="assets/vendor/apexcharts/apexcharts.min.js"></script> -->
@@ -225,11 +225,11 @@ isAuth(); ?>
     <script src="assets/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script> -->
 
     <!-- Dashboard App js -->
-    <script src="assets/js/pages/demo.dashboard.js"></script>
+    <script src="<?= url('assets/js/pages/demo.dashboard.js'); ?>"></script>
 
     <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
-    <script type="module" src="assets/js/build/dashboard.js"></script>
+    <script src="<?= url('assets/js/app.min.js'); ?>"></script>
+    <script type="module" src="<?= url('assets/js/build/dashboard.js'); ?>"></script>
 
 
 </body>
