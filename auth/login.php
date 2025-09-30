@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['num_cuenta'] = $usuario->num_cuenta;
                     $_SESSION['login'] = true;
                     $_SESSION['rol'] = $usuario->rol ? 'Administrador' : 'Usuario';
-                    header('Location:/dashboard.php');
+                    header('Location: ' . url('/dashboard.php'));
                 }
             }else {
                 Usuario::setAlerta('danger', 'La contraseña es incorrecta');

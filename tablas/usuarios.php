@@ -10,17 +10,17 @@ redirectIfNotAdmin(); ?>
     <?php include_once __DIR__ . '/../layouts/title-meta.php'; ?>
 
     <!-- Daterangepicker css -->
-    <link rel="stylesheet" href="/assets/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="<?= url('assets/vendor/daterangepicker/daterangepicker.css'); ?>">
     <!-- Datatables css -->
-    <link href="/assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= url('assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css'); ?>" rel="stylesheet" type="text/css" />
 
     <!-- Vector Map css -->
-    <link rel="stylesheet" href="/assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
+    <link rel="stylesheet" href="<?= url('assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css'); ?>">
 
 
 
@@ -101,24 +101,24 @@ redirectIfNotAdmin(); ?>
     <?php include_once __DIR__ . '/../layouts/footer-scripts.php'; ?>
 
     <!-- Datatables js -->
-    <script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="/assets/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-    <script src="/assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="/assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-    <script src="/assets/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js"></script>
-    <script src="/assets/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="/assets/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-    <script src="/assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="/assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="/assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="/assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
+    <script src="<?= url('assets/vendor/datatables.net/js/jquery.dataTables.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-buttons/js/buttons.html5.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-buttons/js/buttons.flash.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-buttons/js/buttons.print.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js'); ?>"></script>
+    <script src="<?= url('assets/vendor/datatables.net-select/js/dataTables.select.min.js'); ?>"></script>
 
 
     <!-- App js -->
-    <script src="/assets/js/app.min.js"></script>
-    <script type="module" src="/assets/js/build/tablas/tablas.js"></script>
+    <script src="<?= url('assets/js/app.min.js'); ?>"></script>
+    <script type="module" src="<?= url('assets/js/build/tablas/tablas.js'); ?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
 </body>

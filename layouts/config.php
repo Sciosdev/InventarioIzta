@@ -1,4 +1,7 @@
 <?php
+
+define('BASE_PATH', rtrim(getenv('APP_BASE_PATH') ?: '/inventario', '/'));
+
 /* Base de datos configuración */
 define('DB_SERVER', '192.185.131.183');
 define('DB_USERNAME', 'xaanal_inventario');

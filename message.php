@@ -1,3 +1,4 @@
+<?php include_once __DIR__ . '/layouts/app.php'; ?>
 <head>
     <title>Mensaje</title>
     <?php include_once 'layouts/title-meta.php'; ?>
@@ -17,13 +18,13 @@
 
                         <!-- Logo -->
                         <div class="card-header py-1 text-center bg-white">
-                            <span><img src="assets/images/logo-unam.png" alt="logo" height="200"></span>
+                            <span><img src="<?= url('assets/images/logo-unam.png'); ?>" alt="logo" height="200"></span>
                         </div>
 
                         <div class="card-body py-2 px-4">
                             <div class="text-center w-75 m-auto">
                                 <h4 class="text-dark-50 text-center pb-0 fw-bold fs-2">Contraseña creada</h4>
-                                <p class="text-muted mb-3">Tu contraseña ha sido creada correctamente. Puedes cerrar esta pestaña o <a href="/" onclick="event.preventDefault(); location.replace(this.href);">iniciar sesión</a>.</p>
+                                <p class="text-muted mb-3">Tu contraseña ha sido creada correctamente. Puedes cerrar esta pestaña o <a href="<?= url('/'); ?>" onclick="event.preventDefault(); location.replace(this.href);">iniciar sesión</a>.</p>
                             </div>
                         </div> <!-- end card-body -->
 
@@ -50,7 +51,7 @@
     <?php include_once __DIR__ . '/layouts/footer-scripts.php'; ?>
 
     <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="<?= url('assets/js/app.min.js'); ?>"></script>
 
 </body>
 

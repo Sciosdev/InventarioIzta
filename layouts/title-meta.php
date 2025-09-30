@@ -5,4 +5,4 @@
 <meta content="Coderthemes" name="author" />
 
 <!-- App favicon -->
-<link rel="shortcut icon" href="/assets/images/logo-bg-w.jpg">
+<link rel="shortcut icon" href="<?= url('assets/images/logo-bg-w.jpg'); ?>">
