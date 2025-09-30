@@ -1,5 +1,20 @@
 <?php
 
+function url(string $path = ''): string
+{
+    $path = ltrim($path, '/');
+
+    if (BASE_PATH === '') {
+        return '/' . $path;
+    }
+
+    if ($path === '') {
+        return BASE_PATH . '/';
+    }
+
+    return BASE_PATH . '/' . $path;
+}
+
 function debuguear($variable) : string {
     echo "<pre>";
     var_dump($variable);
@@ -16,7 +31,7 @@ function s($html) : string {
 // Función que revisa que el usuario este autenticado
 function isAuth() : void {
     if(!isset($_SESSION['login'])) {
-        header('Location: /');
+        header('Location: ' . url('/'));
     }
 }
 
@@ -28,7 +43,7 @@ function isAdmin() : bool {
 function redirectIfNotAdmin(): void {
 
     if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'Administrador') {
-        header('Location: /dashboard.php');
+        header('Location: ' . url('/dashboard.php'));
         exit; // ¡Importante para detener la ejecución!
     }
 }

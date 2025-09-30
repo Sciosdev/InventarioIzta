@@ -1,3 +1,4 @@
+<?php include_once __DIR__ . '/layouts/app.php'; ?>
 <head>
     <title>Iniciar Sesion</title>
     <?php include_once 'layouts/title-meta.php'; ?>
@@ -20,7 +21,7 @@
                                 <p class="text-muted">Por favor, espera la aprobación del administrador.</p>
                                 <div class="row mt-3">
                                     <div class="col-12 text-center">
-                                        <p class="text-muted">Puedes cerrar esta pestaña o iniciar sesión ahora<a href="/" class="text-muted ms-1 link-offset-3 text-decoration-underline"><b>Iniciar Sesión</b></a></p>
+                                        <p class="text-muted">Puedes cerrar esta pestaña o iniciar sesión ahora<a href="<?= url('/'); ?>" class="text-muted ms-1 link-offset-3 text-decoration-underline"><b>Iniciar Sesión</b></a></p>
                                     </div> <!-- end col -->
                                 </div>
 
@@ -41,7 +42,7 @@
     <?php include_once __DIR__ . '/layouts/footer-scripts.php'; ?>
     <!-- App js -->
     <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="<?= url('assets/js/app.min.js'); ?>"></script>
 
 </body>
 

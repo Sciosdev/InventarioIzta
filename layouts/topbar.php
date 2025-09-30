@@ -54,7 +54,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
                     
-                    <a href="/auth/logout.php" class="dropdown-item">
+                    <a href="<?= url('auth/logout.php'); ?>" class="dropdown-item">
                         <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
                         <span>Cerrar Sesión</span>
                     </a>
