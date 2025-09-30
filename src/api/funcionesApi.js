@@ -1,6 +1,28 @@
+export const basePath = window.APP_BASE_PATH ?? '';
+
+export function resolveUrl(url) {
+    if (url instanceof URL) {
+        return url;
+    }
+
+    if (typeof url === 'string') {
+        if (/^https?:\/\//i.test(url)) {
+            return new URL(url);
+        }
+
+        const relativePath = url.startsWith('/')
+            ? `${basePath}${url}`
+            : `${basePath}/${url}`;
+
+        return new URL(relativePath, window.location.origin);
+    }
+
+    throw new TypeError('La URL proporcionada no es válida.');
+}
+
 export async function getApi(url) {
     try {
-        const respuesta = await fetch(url);
+        const respuesta = await fetch(resolveUrl(url));
         const resultado = await respuesta.json();
         return resultado;
     } catch (error) {
@@ -9,9 +31,7 @@ export async function getApi(url) {
 }
 export async function getApiFiltros(nombreTabla, filtros) {
 
-    const baseUrl = 'api/index.php/' + nombreTabla;
-
-    const url = new URL(baseUrl, window.location.origin);
+    const url = new URL(`${basePath}/api/index.php/${nombreTabla}`, window.location.origin);
     const params = new URLSearchParams();
 
     Object.keys(filtros).forEach(key => {
@@ -20,14 +40,14 @@ export async function getApiFiltros(nombreTabla, filtros) {
 
     url.search = params.toString();
 
-    const resultado = await getApi(url.toString());
+    const resultado = await getApi(url);
 
     
     return resultado;
 }
 export async function postApi(url, datos) {
     try {
-        const respuesta = await fetch(url, {
+        const respuesta = await fetch(resolveUrl(url), {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', // Indica que el cuerpo es JSON
@@ -43,10 +63,10 @@ export async function postApi(url, datos) {
     }
 }
 export async function deleteApi(url, id) {
-    
+
     try {
-        const respuesta = await fetch(url, {
-            method: 'DELETE', 
+        const respuesta = await fetch(resolveUrl(url), {
+            method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json', // Indica que el cuerpo es JSON
             },
@@ -62,8 +82,8 @@ export async function deleteApi(url, id) {
 }
 export async function putApi(url, datos) {
     try {
-        
-        const respuesta = await fetch(url, {
+
+        const respuesta = await fetch(resolveUrl(url), {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json', // Indica que el cuerpo es JSON
